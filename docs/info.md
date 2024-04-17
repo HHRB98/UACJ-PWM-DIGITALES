@@ -9,11 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+la Implementacion de un modulador de ancho de pulso (PWM) funciona mediante Verilog esencial en electronica para regular la energia entregada a un dispositivo, este diseño esta bajo los requisitos del sistema
 
 ## How to test
 
-Explain how to use your project
+en una basys 3
 
 ## External hardware
 
