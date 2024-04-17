@@ -10,9 +10,9 @@ module tt_um_pwm_1 #(
 
 reg [31:0] q_reg, q_next;  // Registro para el contador del preescalado
 reg [7:0] d_reg, d_next;   // Registro para el contador del ciclo de trabajo
-reg [8:0] d_ext;           // Extensión del contador del ciclo de trabajo
-reg pwm_reg, pwm_next;     // Registro y próximo valor de la señal de PWM
-wire tick;                 // Señal para indicar el inicio de un ciclo PWM
+reg [8:0] d_ext;           // ExtensiÃ³n del contador del ciclo de trabajo
+reg pwm_reg, pwm_next;     // Registro y prÃ³ximo valor de la seÃ±al de PWM
+wire tick;                 // SeÃ±al para indicar el inicio de un ciclo PWM
 wire [31:0] dvsr = 32'b00000000000000000010100010110001; // Valor fijo de dvsr 104167 valor  10Mhz/960Ard
 
 always @(posedge clk_i, posedge rst_i) begin
@@ -51,7 +51,7 @@ always @(*) begin
   d_ext = {1'b0, d_reg};
 end
 
-// comparison circuit (Circuito de comparación para generar PWM)
+// comparison circuit (Circuito de comparaciÃ³n para generar PWM)
 always @(*) begin
   if (d_ext < duty_i) begin
     pwm_next = 1'b1;
