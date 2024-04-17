@@ -2,6 +2,7 @@
 module tt_um_pwm_1 #(
   parameter width = 8
   )  (
+  input rst_n
   input clk,
   input rst_i,
   input [width-1:0] duty_i,
