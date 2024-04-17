@@ -4,7 +4,6 @@ module tt_um_pwm_1 #(
   )  (
   input rst_n,
   input clk,
-  input rst,
   input [7:0] ui_in,
   input wire ena,
   input wire [7:0] uio_in,
@@ -12,7 +11,7 @@ module tt_um_pwm_1 #(
   output wire [7:0] uio_out,
   output wire [7:0] uio_oe,
   
-  output pwm_o
+  //output wire pwm_o
 );
 
 reg [31:0] q_reg, q_next;  // Registro para el contador del preescalado
@@ -67,6 +66,6 @@ always @(*) begin
   end
 end
 
-assign pwm_o = pwm_reg;
+  assign uo_out [0] = pwm_reg;
 
 endmodule
