@@ -5,7 +5,7 @@ module tt_um_pwm_1 #(
   input clk,
   input rst_i,
   input [width-1:0] duty_i,
-  input wire ena
+  input wire ena,
   output pwm_o
 );
 
