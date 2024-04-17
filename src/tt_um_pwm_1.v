@@ -2,12 +2,17 @@
 module tt_um_pwm_1 #(
   parameter width = 8
   )  (
-  
+  input wire ui_in,
   input rst_n,
   input clk,
   input rst_i,
   input [width-1:0] ui_in,
   input wire ena,
+  input wire uio_in,
+  output wire uo_out,
+  output wire uio_out,
+  output wire uio_oe,
+  
   output pwm_o
 );
 
