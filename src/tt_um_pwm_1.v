@@ -2,10 +2,11 @@
 module tt_um_pwm_1 #(
   parameter width = 8
   )  (
+  
   input rst_n,
   input clk,
   input rst_i,
-  input [width-1:0] duty_i,
+  input [width-1:0] ui_in,
   input wire ena,
   output pwm_o
 );
@@ -55,7 +56,7 @@ end
 
 // comparison circuit (Circuito de comparación para generar PWM)
 always @(*) begin
-  if (d_ext < duty_i) begin
+  if (d_ext < ui_in) begin
     pwm_next = 1'b1;
   end else begin
     pwm_next = 1'b0;
