@@ -2,7 +2,6 @@
 module tt_um_pwm_1 #(
   parameter width = 8
   )  (
-  input wire ui_in,
   input rst_n,
   input clk,
   input rst_i,
