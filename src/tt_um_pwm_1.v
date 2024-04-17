@@ -4,7 +4,7 @@ module tt_um_pwm_1 #(
   )  (
   input rst_n,
   input clk,
-  input rst_i,
+  input rst,
   input [7:0] ui_in,
   input wire ena,
   input wire [7:0] uio_in,
