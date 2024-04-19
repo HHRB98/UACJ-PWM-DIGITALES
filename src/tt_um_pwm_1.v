@@ -1,7 +1,7 @@
 module tt_um_pwm_1 (
   input  wire       ena,      // will go high when the design is enabled
   input  wire       clk,      // clock
-  input  wire       rst_n     // rst_n_n - low to rst_n
+  input  wire       rst_n,     // rst_n_n - low to rst_n
   input wire [7:0]  ui_in,
   output wire [7:0] uo_out,
   input  wire [7:0] uio_in,    // IOs: Input path
