@@ -18,6 +18,12 @@ reg pwm_reg, pwm_next;     // Registro y pr ximo valor de la se al de PWM
 wire tick;                 // Se al para indicar el inicio de un ciclo PWM
 wire [31:0] dvsr = 32'b00000000000000000000000000010011; // Valor fijo de dvsr 19 para clk = 10 MHz (pwm_freq = 980 Hz)
 
+// Assigning values to output wires
+assign uio_out = 8'b11111111;
+assign uio_oe = 8'b11111111;
+ // Here we use uio_in without modifying the output
+  wire [7:0] additional_input = uio_in;
+
 always @(posedge clk, posedge rst_n) begin
     if (rst_n) begin
     q_reg <= 32'b0;
