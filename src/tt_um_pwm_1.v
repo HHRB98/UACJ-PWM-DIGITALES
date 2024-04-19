@@ -1,10 +1,10 @@
 module tt_um_pwm_1 #(
   parameter width = 8
   )  (
-  input clk,
-  input rst_n,
-  input [7:0]  ui_in,
-  output [7:0] uo_out,
+  input wire clk,
+  input wire rst_n,
+  input wire [7:0]  ui_in,
+  output wire [7:0] uo_out,
   input  wire [7:0] uio_in,    // IOs: Input path
   output wire [7:0] uio_out,   // IOs: Output path
   output wire [7:0] uio_oe,    // IOs: Enable path (active high: 0=input, 1=output)
