@@ -17,8 +17,9 @@ wire tick;                 // Señal para indicar el inicio de un ciclo PWM
 wire [31:0] dvsr = 32'b00000000000000000000000000010011; // Valor fijo de dvsr 19 para clk = 10 MHz (pwm_freq = 980 Hz)
 
 // Assigning values to output wires
-assign uio_out = 8'b11111111;
-assign uio_oe = 8'b11111111;
+assign uio_out = 8'h00;
+assign uio_oe = 8'h00;
+assign uo_out[7:1] = 7'h00;
 // Here we use uio_in without modifying the output
 wire [7:0] additional_input = uio_in;
 
@@ -67,6 +68,6 @@ always @(*) begin
   end
 end
 
-assign uo_out = pwm_reg;
+  assign uo_out[0] = pwm_reg;
 
 endmodule
