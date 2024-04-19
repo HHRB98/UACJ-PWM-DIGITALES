@@ -4,7 +4,7 @@ module tt_um_pwm_1 #(
   input clk,
   input rst_n,
   input [7:0]  ui_in,
-  output uo_out,
+  output [7:0] uo_out,
   input  wire [7:0] uio_in,    // IOs: Input path
   output wire [7:0] uio_out,   // IOs: Output path
   output wire [7:0] uio_oe,    // IOs: Enable path (active high: 0=input, 1=output)
@@ -63,6 +63,6 @@ always @(*) begin
   end
 end
 
-assign uo_out = pwm_reg;
+  assign uo_out[0] = pwm_reg;
 
 endmodule
