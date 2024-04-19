@@ -13,16 +13,16 @@ module tt_um_pwm_1 #(
 
 reg [31:0] q_reg, q_next;  // Registro para el contador del preescalado
 reg [7:0] d_reg, d_next;   // Registro para el contador del ciclo de trabajo
-reg [8:0] d_ext;           // Extensi n del contador del ciclo de trabajo
-reg pwm_reg, pwm_next;     // Registro y pr ximo valor de la se al de PWM
-wire tick;                 // Se al para indicar el inicio de un ciclo PWM
+reg [8:0] d_ext;           // Extensión del contador del ciclo de trabajo
+reg pwm_reg, pwm_next;     // Registro y próximo valor de la señal de PWM
+wire tick;                 // Señal para indicar el inicio de un ciclo PWM
 wire [31:0] dvsr = 32'b00000000000000000000000000010011; // Valor fijo de dvsr 19 para clk = 10 MHz (pwm_freq = 980 Hz)
 
 // Assigning values to output wires
 assign uio_out = 8'b11111111;
 assign uio_oe = 8'b11111111;
- // Here we use uio_in without modifying the output
-  wire [7:0] additional_input = uio_in;
+// Here we use uio_in without modifying the output
+wire [7:0] additional_input = uio_in;
 
 always @(posedge clk, posedge rst_n) begin
     if (rst_n) begin
@@ -60,15 +60,15 @@ always @(*) begin
   d_ext = {1'b0, d_reg};
 end
 
-// comparison circuit (Circuito de comparaci n para generar PWM)
+// comparison circuit (Circuito de comparación para generar PWM)
 always @(*) begin
-  if (d_ext < ui_in) begin
+  if (ena && (d_ext < ui_in)) begin
     pwm_next = 1'b1;
   end else begin
     pwm_next = 1'b0;
   end
 end
 
-  assign uo_out[0] = pwm_reg;
+assign uo_out[0] = pwm_reg;
 
 endmodule
