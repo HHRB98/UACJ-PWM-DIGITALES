@@ -1,6 +1,4 @@
 module tt_um_pwm_1 #(
-  parameter width = 8
-  )  (
   input wire clk,
   input wire rst_n,
   input wire [7:0]  ui_in,
@@ -69,6 +67,6 @@ always @(*) begin
   end
 end
 
-assign uo_out[0] = pwm_reg;
+assign uo_out = pwm_reg;
 
 endmodule
